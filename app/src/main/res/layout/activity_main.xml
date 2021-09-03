@@ -17,9 +17,11 @@
         android:id="@+id/editTextTextPersonName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints="titulo"
         android:ems="10"
         android:hint="@string/txt_titulo"
         android:inputType="textPersonName"
+        android:minHeight="48dp"
         tools:ignore="DuplicateSpeakableTextCheck" />
 
     <TextView
@@ -32,9 +34,12 @@
         android:id="@+id/editTextTextPersonName2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints="descripcion"
         android:ems="10"
+        android:hint="@string/txt_descripcion"
         android:inputType="textPersonName"
-        android:hint="@string/txt_descripcion"/>
+        android:minHeight="48dp"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView3"
@@ -46,9 +51,12 @@
         android:id="@+id/editTextTextEmailAddress"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints="correo electronico"
         android:ems="10"
+        android:hint="@string/txt_email"
         android:inputType="textEmailAddress"
-        android:hint="@string/txt_email"/>
+        android:minHeight="48dp"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView4"
@@ -60,9 +68,12 @@
         android:id="@+id/editTextNumber"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:autofillHints="precio"
         android:ems="10"
+        android:hint="@string/txt_precio"
         android:inputType="number"
-        android:hint="@string/txt_precio"/>
+        android:minHeight="48dp"
+        tools:ignore="TextContrastCheck" />
 
     <TextView
         android:id="@+id/textView5"
@@ -74,12 +85,13 @@
         android:id="@+id/spinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:entries="@array/items_categorias" />
+        android:entries="@array/items_categorias"
+        android:minHeight="48dp" />
 
     <Switch
         android:id="@+id/switch1"
         android:layout_width="match_parent"
-        android:layout_height="14dp"
+        android:layout_height="48dp"
         android:text="@string/txt_descuento" />
 
     <SeekBar
@@ -93,6 +105,7 @@
         android:id="@+id/checkBox"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:text="@string/txt_retiro" />
 
     <TextView
@@ -109,12 +122,14 @@
         android:ems="10"
         android:inputType="textPersonName"
         android:hint="@string/txt_direccion_retiro"
+        android:autofillHints="direccion de retiro"
         android:visibility="gone" />
 
     <CheckBox
         android:id="@+id/checkBox2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:minHeight="48dp"
         android:text="@string/txt_terminos" />
 
     <Button

@@ -1,3 +1,26 @@
 <resources>
     <string name="app_name">Laboratorio1</string>
+    <string name="txt_titulo">Titulo</string>
+    <string name="txt_descripcion_titulo">Descripción (opcional)</string>
+    <string name="txt_descripcion">Descripción del producto...</string>
+    <string name="txt_email_titulo">Correo de contacto</string>
+    <string name="txt_email">Correo electronico...</string>
+    <string name="txt_precio_titulo">Precio</string>
+    <string name="txt_precio">Precio del producto...</string>
+    <string name="txt_categoria">Categoria</string>
+    <string-array name="items_categorias">
+        <item>INDUMENTARIA</item>
+        <item>ELECTRONICA</item>
+        <item>ENTRETENIMIENTO</item>
+        <item>JARDIN</item>
+        <item>VEHICULOS</item>
+        <item>JUGUETES</item>
+    </string-array>
+    <string name="txt_min">0</string>
+    <string name="txt_descuento">Ofrecer descuento de envío</string>
+    <string name="txt_retiro">Retiro en persona</string>
+    <string name="txt_direccion_retiro_titulo">Dirección de retiro</string>
+    <string name="txt_direccion_retiro">Dirección de retiro...</string>
+    <string name="txt_terminos">Aceptar los terminos y condiciones</string>
+    <string name="txt_btn_publicar">PUBLICAR</string>
 </resources>

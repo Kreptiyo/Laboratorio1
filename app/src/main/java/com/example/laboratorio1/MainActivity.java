@@ -1,5 +1,6 @@
 package com.example.laboratorio1;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private CheckBox checkBoxRetiro;
     private TextView direccionRetiroTitulo;
     private Button btnPublicar;
+    private TextView txtCategoria;
     //Validar
     private EditText inputTitulo;
     private EditText inputPrecio;
@@ -42,7 +44,14 @@ public class MainActivity extends AppCompatActivity {
         inputDireccionRetiro = findViewById(R.id.editTextTextPersonName3);
         inputEmail = findViewById(R.id.editTextTextEmailAddress);
         inputDescripcion = findViewById(R.id.editTextTextPersonName2);
+        txtCategoria = (EditText) findViewById(R.id.txtCategoria);
+        txtCategoria.setEnabled(false);
 
+        //Aca recibimos el dato de la categoria seleccionada en la pantalla de seleccion
+
+        String dato = getIntent().getStringExtra("dato_categoria");
+
+        txtCategoria.setText(dato);
 
         switchDescuento.setOnCheckedChangeListener((buttonView, isChecked) -> {
             if(isChecked)
@@ -129,6 +138,10 @@ public class MainActivity extends AppCompatActivity {
                         mensajeAMostrar.append("\n"+"- La direccion de retiro contiene simbolos no permitidos"+"\n");
                     }
                 }
+                if(txtCategoria.getText().toString().isEmpty())
+                {
+                    mensajeAMostrar.append("\n"+"- Categoria. (Campo Obligatorio)"+"\n");
+                }
                 if(mensajeAMostrar.length() != 0)
                 {
                     Toast toastError = Toast.makeText(getApplicationContext(), mensajeAMostrar, Toast.LENGTH_SHORT);
@@ -154,5 +167,24 @@ public class MainActivity extends AppCompatActivity {
         Pattern pattern = Pattern.compile("[a-zA-Z0-9,.\\s]+");
         return !pattern.matcher(campoTexto).matches();
     }
+
+    public void Categoria(View view){
+        Intent categoria = new Intent(this, CategoriaRecycler.class);
+        startActivityForResult(categoria,1);
+    }
+
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+
+        //lo que hace es recibir la categoria de la otra pantalla y ponerla en esta
+        if (requestCode == 1) {
+            if(resultCode == CategoriaRecycler.RESULT_OK){
+                String result=data.getStringExtra("dato_categoria");
+                txtCategoria.setText(result);
+            }
+        }
+    }
+
 
 }

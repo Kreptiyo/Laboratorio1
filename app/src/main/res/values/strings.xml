@@ -16,6 +16,8 @@
         <item>VEHICULOS</item>
         <item>JUGUETES</item>
     </string-array>
+    <string name="txt_Categoria">Categoria</string>
+    <string name="btn_BuscarCategoria">Seleccionar categoria</string>
     <string name="txt_min">0</string>
     <string name="txt_descuento">Ofrecer descuento de envío</string>
     <string name="txt_retiro">Retiro en persona</string>

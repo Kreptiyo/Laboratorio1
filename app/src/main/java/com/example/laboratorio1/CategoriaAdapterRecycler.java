@@ -1,5 +1,6 @@
 package com.example.laboratorio1;
 
+import android.content.Intent;
 import android.graphics.Color;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
@@ -11,10 +12,13 @@ import com.example.laboratorio1.model.Categoria;
 
 import java.util.List;
 
-public class CategoriaAdapterRecycler extends RecyclerView.Adapter<CategoriaAdapterRecycler.ViewHolder>{
+public class CategoriaAdapterRecycler extends RecyclerView.Adapter<CategoriaAdapterRecycler.ViewHolder>
+        implements View.OnClickListener{
 
-    private static final String TAG = "SeriesAdapterRecycler";
+    private static final String TAG = "CategoriaAdapterRecycler";
     private List<Categoria> mDataSet;
+    private View.OnClickListener listener;
+
 
     public static class ViewHolder extends RecyclerView.ViewHolder {
         TextView tvTitulo;
@@ -53,6 +57,9 @@ public class CategoriaAdapterRecycler extends RecyclerView.Adapter<CategoriaAdap
         // Create a new view.
         View v = LayoutInflater.from(viewGroup.getContext())
                 .inflate(R.layout.fila_cat, viewGroup, false);
+
+        v.setOnClickListener(this);
+
         return new ViewHolder(v);
     }
     // END_INCLUDE(recyclerViewOnCreateViewHolder)
@@ -77,4 +84,19 @@ public class CategoriaAdapterRecycler extends RecyclerView.Adapter<CategoriaAdap
     public int getItemCount() {
         return mDataSet.size();
     }
+
+    public void setOnClickListener(View.OnClickListener l){
+        this.listener=l;
+    }
+
+    @Override
+    public void onClick(View view) {
+        if(listener!=null){
+            listener.onClick(view);
+
+            //cuando seleccione una categoria, que se ponga el fondo en rojo
+            view.setBackgroundColor(Color.RED);
+        }
+    }
+
 }
